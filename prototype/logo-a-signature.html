@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo A · Signature script</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body { min-height: 100%; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #EDE4EA; padding: 24px; box-sizing: border-box; }
+  #dc-root > div { border-radius: 20px; box-shadow: 0 20px 60px rgba(42, 26, 46, 0.22); }
+  @media (max-width: 440px) { body { padding: 0; align-items: flex-start; } #dc-root > div { border-radius: 0; box-shadow: none; } }
+</style>
+<script src="vendor/preact.umd.js"></script>
+<script src="dc-lite.js"></script>
+</head>
+<body>
+<template id="dc">
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Allura&amp;family=Outfit:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#B83A63}a:hover{color:#8E2A4B}
+</style>
+</helmet>
+<div style="width: 560px; height: 640px; display: flex; flex-direction: column; font-family: 'Outfit', sans-serif; color: #2A1A2E">
+<div style="flex: 1; background: #FBEFF3; display: flex; align-items: center; justify-content: center">
+<div style="display: flex; flex-direction: column; align-items: center; position: relative">
+<span style="font-weight: 600; font-size: 16px; letter-spacing: 8px; color: #5B2A5E; margin-left: 8px">GLAM WITH</span>
+<span style="font-family: 'Allura', cursive; font-size: 150px; line-height: 1; color: #B83A63; margin-top: -4px">Jeni</span>
+<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" style="position: absolute; right: -18px; top: 36px"><path d="M12 1 L13.6 10.4 L23 12 L13.6 13.6 L12 23 L10.4 13.6 L1 12 L10.4 10.4 Z" fill="#C98BA1"></path></svg>
+<span style="width: 120px; height: 1px; background: #C98BA1; margin-top: 6px"></span>
+<span style="font-size: 12px; letter-spacing: 4px; color: #6E5E6A; margin-top: 12px; margin-left: 4px">MAKEUP · NAIL ART</span>
+</div>
+</div>
+<div style="height: 180px; background: #FFFFFF; border-top: 1px solid #EADDE3; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; box-sizing: border-box">
+<div style="width: 112px; height: 112px; border-radius: 26px; background: #5B2A5E; display: flex; align-items: center; justify-content: center">
+<span style="font-family: 'Allura', cursive; font-size: 96px; line-height: 1; color: #FFFFFF; margin-top: 10px">J</span>
+</div>
+<div style="display: flex; flex-direction: column; align-items: center">
+<span style="font-weight: 600; font-size: 9px; letter-spacing: 5px; color: #2A1A2E; margin-left: 5px">GLAM WITH</span>
+<span style="font-family: 'Allura', cursive; font-size: 64px; line-height: 1; color: #2A1A2E">Jeni</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="width: 28px; height: 28px; border-radius: 14px; background: #B83A63; display: block"></span>
+<span style="width: 28px; height: 28px; border-radius: 14px; background: #5B2A5E; display: block"></span>
+<span style="width: 28px; height: 28px; border-radius: 14px; background: #FBEFF3; border: 1px solid #E3C9D3; box-sizing: border-box; display: block"></span>
+</div>
+</div>
+</div>
+</template>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":560,"height":640}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
