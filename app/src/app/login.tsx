@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
 import { AppIcon, Body, Button, Logo, Screen } from '@/components/ui';
-import { useStore } from '@/lib/store';
+import { DEMO_ADMIN_PHONE, isDemoMode, useStore } from '@/lib/store';
 import { colors, fonts } from '@/theme';
 
 export default function Login() {
@@ -40,6 +40,17 @@ export default function Login() {
 
       <Button title="Send OTP" onPress={sendOtp} disabled={!valid} />
 
+      {isDemoMode && (
+        <View style={styles.demo}>
+          <Text style={styles.demoTitle}>Live demo with sample data</Text>
+          <Body style={{ fontSize: 13, color: colors.mutedStrong }}>
+            Any number opens the customer app; Jeni's number opens the admin side. Any 6-digit code works.
+          </Body>
+          <Button title={`Use Jeni's number (${DEMO_ADMIN_PHONE.slice(0, 5)} ${DEMO_ADMIN_PHONE.slice(5)})`} variant="secondary" small
+            style={{ alignSelf: 'flex-start' }} onPress={() => setPhone(DEMO_ADMIN_PHONE)} />
+        </View>
+      )}
+
       <Body muted style={{ fontSize: 12, textAlign: 'center' }}>
         By continuing you agree to receive booking updates and offers on WhatsApp. You can opt out anytime.
       </Body>
@@ -51,5 +62,7 @@ const styles = StyleSheet.create({
   label: { fontFamily: fonts.bodySemi, fontSize: 14, color: colors.ink },
   phoneRow: { flexDirection: 'row', alignItems: 'center', height: 56, borderWidth: 1, borderColor: colors.lineStrong, borderRadius: 14, backgroundColor: colors.surface, overflow: 'hidden' },
   cc: { paddingHorizontal: 14, fontFamily: fonts.bodySemi, fontSize: 16, color: colors.ink, borderRightWidth: 1, borderRightColor: colors.line, height: '100%', textAlignVertical: 'center', lineHeight: 54 },
+  demo: { backgroundColor: colors.segment, borderRadius: 14, padding: 14, gap: 8 },
+  demoTitle: { fontFamily: fonts.bodyBold, fontSize: 14, color: colors.ink },
   phoneInput: { flex: 1, paddingHorizontal: 14, fontFamily: fonts.body, fontSize: 17, color: colors.ink },
 });

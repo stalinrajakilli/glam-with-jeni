@@ -22,11 +22,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "bundler": "metro"
+      "bundler": "metro",
+      "name": "GlamWithJeni",
+      "shortName": "GlamWithJeni",
+      "themeColor": "#5B2A5E",
+      "backgroundColor": "#FCF8F9",
+      "description": "Book makeup and nail art, shop press-on nails and chat with Jeni."
     },
     "scheme": "glamwithjeni",
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": true,
+      "baseUrl": "/glam-with-jeni"
     },
     "plugins": [
       "expo-router",

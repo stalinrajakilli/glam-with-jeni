@@ -2,6 +2,10 @@
 
 A mobile app for Jeni's makeup and nail art studio. Customers log in with their mobile number, book appointments, order press-on nails, use offers, see their history and chat with Jeni (photos included). Jeni signs in to the same app with her number and gets the admin side: today's bookings, orders, offers, WhatsApp broadcasts and an inbox.
 
+**Live demo:** [stalinrajakilli.github.io/glam-with-jeni](https://stalinrajakilli.github.io/glam-with-jeni/) (runs on sample data: any number logs in as a customer, `9999999999` logs in as Jeni, any 6-digit code works)
+· **Design prototype:** [/prototype](https://stalinrajakilli.github.io/glam-with-jeni/prototype/)
+· **Logo directions:** [/prototype/logos.html](https://stalinrajakilli.github.io/glam-with-jeni/prototype/logos.html)
+
 ## What's in this repo
 
 | Folder | What it is |
@@ -69,6 +73,18 @@ All protection is enforced in the database, not just by hiding screens. The poli
 - Real product photos in the `product-images` bucket.
 - App icon and splash from logo A (`app/assets/`), privacy policy URL, and store listings (Google Play one-time fee, Apple Developer yearly fee).
 - Build and submit with EAS: `npx eas-cli@latest build` and `npx eas-cli@latest submit`.
+
+## Publishing the live demo
+
+The demo is a static site on GitHub Pages, served from the `gh-pages` branch (free).
+
+```bash
+bash tools/build-site.sh          # builds ./site: the app's web build + the prototype
+cd site && git init -q -b gh-pages && git add -A && git commit -qm "Deploy site" \
+  && git push -f https://github.com/stalinrajakilli/glam-with-jeni.git gh-pages
+```
+
+The app is built with `experiments.baseUrl: "/glam-with-jeni"` in `app/app.json` so it works under the repository path. If you move it to its own domain, remove that line and rebuild.
 
 ## Rebuilding the prototype
 

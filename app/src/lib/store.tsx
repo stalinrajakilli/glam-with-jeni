@@ -36,7 +36,11 @@ const ADMIN_PHONES: string[] = String(process.env.EXPO_PUBLIC_ADMIN_PHONES ?? '9
   .split(',')
   .map((s: string) => s.trim());
 
-export const offerLabel = (o: Pick<Offer, 'type' | 'value'>) => (o.type === 'pct' ? `${o.value}% off` : `${inr(o.value)} off`);
+/** True until a Supabase project is configured: the app runs on sample data. */
+export const isDemoMode = !process.env.EXPO_PUBLIC_SUPABASE_URL;
+export const DEMO_ADMIN_PHONE = ADMIN_PHONES[0];
+
+export const offerLabel =(o: Pick<Offer, 'type' | 'value'>) => (o.type === 'pct' ? `${o.value}% off` : `${inr(o.value)} off`);
 export const offerDiscount = (o: Offer, subtotal: number) =>
   Math.min(subtotal, o.type === 'pct' ? (subtotal * o.value) / 100 : o.value);
 
