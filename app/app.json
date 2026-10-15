@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "GlamWithJeni",
+    "slug": "glam-with-jeni",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.glamwithjeni.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#5B2A5E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.glamwithjeni.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "scheme": "glamwithjeni",
+    "experiments": {
+      "typedRoutes": true
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "GlamWithJeni uses your photos so you can share nail and makeup references in chat.",
+          "cameraPermission": false,
+          "microphonePermission": false
+        }
+      ]
+    ]
+  }
+}
